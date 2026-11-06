@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ed">
+  <meta name="description" content="SalesVoice-Bench: a process-aware benchmark for voice agents in telephone sales, with three task levels and multilingual audio cases.">
+  <title>SalesVoice-Bench: A Process-Aware Benchmark for Voice Agents in Telephone Sales</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="case-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="SalesVoice-Bench home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>SalesVoice<span class="brand-light">-Bench</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+      <span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="#why">The gap</a>
+      <a href="#benchmark">Task suite</a>
+      <a href="#task-overview">Task overview</a>
+      <a href="#cases">Audio cases</a>
+      <a href="#simulation">Customer model</a>
+      <a href="#reasoner">Evaluator</a>
+      <a href="#findings">Findings</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> RESEARCH PAPER · SPEECH AND SALES</p>
+        <h1 id="hero-title">SalesVoice-Bench: <em>A Process-Aware Benchmark for Voice Agents in Telephone Sales</em></h1>
+        <div class="hero-author-block">
+          <p class="hero-authors">Fengxian Ji · Jinri Guo · Rongxin Zhu · Jingpu Yang · Junhong Liang · Fan Zhang · Zhuohan Xie</p>
+          <p class="hero-affiliation">Kapibala AI · Mohamed bin Zayed University of Artificial Intelligence (MBZUAI) · Beijing Zhongguancun Academy · The University of Melbourne</p>
+        </div>
+        <p class="hero-deck">A process-aware benchmark for spoken sales interactions, customer simulation, and evidence-grounded evaluation.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#benchmark">Explore the benchmark <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://anonymous.4open.science/r/salesvoice-eval-toolkit-FFE5/" target="_blank" rel="noopener">GitHub repository <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#cases">Listen to audio cases <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-facts" aria-label="Benchmark at a glance">
+          <div><strong>3</strong><span>connected task levels</span></div>
+          <div><strong>7</strong><span>languages in the suite</span></div>
+          <div><strong>18</strong><span>controlled capability tests in Level 1</span></div>
+        </div>
+      </div>
+      <div class="hero-levels" aria-label="What each task level measures">
+        <article><span>LEVEL 1</span><p>Controlled speech capability tests across five families.</p><small>500 registered executions per configuration</small></article>
+        <article><span>LEVEL 2</span><p>Complete first-contact sales conversations under customer constraints.</p><small>200 first contacts per configuration</small></article>
+        <article><span>LEVEL 2+</span><p>Follow-up calls using the first contact’s history, when eligible and explicitly permitted.</p><small>Follow-up contacts counted separately</small></article>
+      </div>
+      <div class="hero-bottomline"><span>RESEARCH OVERVIEW</span><span>SALESVOICE-TASK · CUSTOMERAGENT · REASONER</span></div>
+    </section>
+
+    <section class="section section-why" id="why" aria-labelledby="why-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-label"><span>01</span> BENCHMARK POSITIONING</p>
+          <h2 id="why-title">Three scopes leave<br><em>a process gap.</em></h2>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-sequence">
+            <article class="problem-statement">
+              <span class="problem-kicker">THE PROBLEM</span>
+              <h3>Existing evaluations split sales outcomes from spoken interaction.</h3>
+              <p>Sales benchmarks focus on task completion and purchase outcomes, while general voice benchmarks test local speech events. Neither shows whether an agent can manage a complete sales call as customer needs evolve.</p>
+            </article>
+            <div class="limitation-heading"><span>THREE LIMITATIONS</span><i aria-hidden="true">→</i><span>THE CHALLENGE EACH CREATES</span></div>
+            <div class="limitation-list">
+              <article>
+                <div class="limitation-copy"><span>LIMITATION 01</span><h4>Capability dimensions are not connected to interaction levels.</h4><p>The same words can represent different speech events. Text alone cannot separate semantic correctness, auditory understanding, and interaction control.</p></div>
+                <div class="challenge-copy"><b>CHALLENGE · TASK DESIGN</b><p>Distinguish these capabilities, then link them to complete, multi-level sales interactions that preserve spoken dynamics.</p><small>SALESVOICE-TASK</small></div>
+              </article>
+              <article>
+                <div class="limitation-copy"><span>LIMITATION 02</span><h4>Customer state transitions are implicit.</h4><p>Without traceable state, purchase decisions can depend on simulator preferences instead of what happened in the call.</p></div>
+                <div class="challenge-copy"><b>CHALLENGE · CUSTOMER SIMULATION</b><p>Update customer state from interaction evidence while keeping hard constraints consistent.</p><small>CUSTOMERAGENT</small></div>
+              </article>
+              <article>
+                <div class="limitation-copy"><span>LIMITATION 03</span><h4>Outcome labels do not define the evidence boundary.</h4><p>A customer may refuse because a hard constraint makes purchase impossible, regardless of the agent’s sales capability.</p></div>
+                <div class="challenge-copy"><b>CHALLENGE · EVALUATION</b><p>Assess the sales process from observable evidence and distinguish agent capability from customer-dependent outcomes.</p><small>REASONER</small></div>
+              </article>
+            </div>
+          </div>
+          <figure class="scope-figure" aria-labelledby="figure1-caption">
+            <div class="web-figure-heading"><div><span>FIGURE 1 · BENCHMARK POSITIONING</span><h3>Three evaluation scopes</h3></div></div>
+            <a class="figure-image-link figure1-image-link" href="assets/paper-figures/figure1-preview.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 1 image">
+              <img class="paper-image" src="assets/paper-figures/figure1-preview.png" alt="Figure 1 compares text-based sales benchmarks, general voice-agent benchmarks, and SalesVoice-Bench’s multi-level end-to-end sales evaluation." width="1672" height="1800" loading="lazy">
+            </a>
+            <figcaption id="figure1-caption">Figure 1. Text-based sales evaluation, local voice capabilities, and stateful end-to-end sales evaluation.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-benchmark" id="benchmark" aria-labelledby="benchmark-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div><p class="section-label"><span>02</span> SALESVOICE-TASK</p><h2 id="benchmark-title">Three levels.<br><em>One connected task suite.</em></h2></div>
+          <p class="section-intro-copy">Select a level to inspect its task conditions, interaction flow, and evidence requirements.</p>
+        </div>
+
+        <figure class="figure-sheet task-figure" aria-labelledby="task-figure-title">
+          <div class="figure-heading">
+            <div><p class="figure-label">TASK DETAILS <span>/</span> CONDITIONS AND EVIDENCE</p><h3 id="task-figure-title">Inspect the measurement design</h3></div>
+            <p>Details beneath the level overview.</p>
+          </div>
+          <div class="task-tabs" role="tablist" aria-label="SalesVoice-Task levels">
+            <button id="tab-l1" class="task-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-l1" data-level="l1"><span>LEVEL 1</span><b>Capability families</b><small>Five dimensions · controlled evidence</small></button>
+            <button id="tab-l2" class="task-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-l2" data-level="l2" tabindex="-1"><span>LEVEL 2</span><b>Conversation trace</b><small>Live needs, responses, and outcomes</small></button>
+            <button id="tab-l2p" class="task-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-l2p" data-level="l2p" tabindex="-1"><span>LEVEL 2+</span><b>Contact conditions</b><small>Eligibility and explicit permission</small></button>
+          </div>
+          <section id="panel-l1" class="task-panel" role="tabpanel" aria-labelledby="tab-l1">
+            <div class="panel-intro"><div><span class="level-kicker">LEVEL 1 / CONTROLLED TESTS</span><h4>Can the agent handle the parts of a spoken sale?</h4></div><p>Five dimensions break the task into testable capabilities while keeping each condition controlled.</p></div>
+            <div class="dimension-grid">
+              <article><span class="dimension-letter">S</span><h5>Shared semantics</h5><p>Facts, comparisons, constraints, and changing needs.</p></article>
+              <article><span class="dimension-letter">A</span><h5>Auditory input</h5><p>Noise, speakers, speech rate, accents, and acoustic cues.</p></article>
+              <article><span class="dimension-letter">I</span><h5>Interaction control</h5><p>Backchannels, pauses, corrections, and overlap recovery.</p></article>
+              <article><span class="dimension-letter">O</span><h5>Spoken output</h5><p>Intelligibility, suitable prosody, and concern handling.</p></article>
+              <article><span class="dimension-letter">M</span><h5>Multilingual transfer</h5><p>Meaning and local pragmatic conditions across languages.</p></article>
+            </div>
+          </section>
+          <section id="panel-l2" class="task-panel" role="tabpanel" aria-labelledby="tab-l2" hidden>
+            <div class="panel-intro"><div><span class="level-kicker">LEVEL 2 / FIRST CONTACT</span><h4>Can the agent conduct a complete sales conversation?</h4></div><p>The call unfolds dynamically within a preregistered budget. The benchmark does not prescribe a purchase or refusal.</p></div>
+            <div class="contact-flow" aria-label="Level 2 interaction sequence">
+              <div><span>01</span><b>Offer and conditions</b><small>Public product information</small></div><i aria-hidden="true">→</i>
+              <div><span>02</span><b>Spoken interaction</b><small>Agent and customer respond in turn</small></div><i aria-hidden="true">→</i>
+              <div><span>03</span><b>Process and outcome</b><small>Report both in context</small></div>
+            </div>
+            <div class="language-row"><strong>Registered language split</strong><span>140 English</span><span>60 across six target languages</span><div class="language-chips" aria-label="Languages: English, Arabic, Spanish, Hindi, Japanese, Thai and Chinese"><i>EN</i><i>AR</i><i>ES</i><i>HI</i><i>JA</i><i>TH</i><i>ZH</i></div></div>
+          </section>
+          <section id="panel-l2p" class="task-panel" role="tabpanel" aria-labelledby="tab-l2p" hidden>
+            <div class="panel-intro"><div><span class="level-kicker">LEVEL 2+ / FOLLOW-UP</span><h4>A follow-up is a permissioned branch.</h4></div><p>An unfinished sales goal does not grant permission. Eligible calls restore context and remain within contact limits.</p></div>
+            <div class="permission-flow">
+              <div class="permission-start"><span>AFTER LEVEL 2</span><b>Is the task still eligible?</b><small>Use the recorded public interaction history.</small></div>
+              <div class="permission-gate"><span>EXPLICIT<br>PERMISSION?</span></div>
+              <div class="permission-end permission-stop"><span class="end-icon">×</span><div><b>No permission</b><small>End contact</small></div></div>
+              <div class="permission-end permission-continue"><span class="end-icon">↗</span><div><b>Permission granted</b><small>Continue within the registered limits</small></div></div>
+            </div>
+            <div class="permission-note"><b>Follow-up calls are counted separately.</b><span>Permission controls contact; it is not a sales outcome.</span></div>
+          </section>
+          <figcaption>Level 2+ extends an eligible Level 2 interaction only when the customer has given specific follow-up permission.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-task-overview" id="task-overview" aria-labelledby="task-overview-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div><p class="section-label"><span>03</span> SALESVOICE-TASK / OVERVIEW</p><h2 id="task-overview-title">A task map for<br><em>the full call lifecycle.</em></h2></div>
+          <p class="section-intro-copy">The suite moves from controlled capability evidence into a first sales contact, then follows the interaction only when the contact conditions allow it.</p>
+        </div>
+        <figure class="web-figure task-map-figure" aria-labelledby="figure2-caption">
+          <div class="web-figure-heading"><div><span>FIGURE 2 · SALESVOICE-TASK OVERVIEW</span><h3>Three linked stages, distinct evidence</h3></div></div>
+          <a class="figure-image-link figure-image-link-wide" href="assets/paper-figures/figure2-preview.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 2 image">
+            <img class="paper-image" src="assets/paper-figures/figure2-preview.png" alt="Figure 2 details Level 1 capability types, Level 2 sales-call conditions, and Level 2+ permissioned follow-up." width="1800" height="1291" loading="lazy">
+          </a>
+          <figcaption id="figure2-caption">Figure 2. SalesVoice-Task overview. The figure is displayed as a responsive image, without an embedded document viewer; select it for the full-size image.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-audio" id="cases" aria-labelledby="cases-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div><p class="section-label"><span>04</span> LISTENING LIBRARY</p><h2 id="cases-title">Hear the cases<br><em>across all three levels.</em></h2></div>
+          <p class="section-intro-copy">A small, downloadable selection makes the benchmark’s different interaction demands easy to compare. Every player uses audio bundled with this page.</p>
+        </div>
+        <div class="audio-library-stats" aria-label="Audio selection coverage">
+          <div><strong>24</strong><span>audio cases</span></div>
+          <div><strong>7</strong><span>paper languages</span></div>
+          <div><strong>3</strong><span>connected task levels</span></div>
+        </div>
+        <p class="audio-manifest-link"><a href="case_manifest.csv" download>Download the selection manifest <span aria-hidden="true">↓</span></a><small>Levels, languages, and SHA-256 for each included audio file.</small></p>
+        <aside class="audio-notice"><span class="caveat-mark">ABOUT THESE CLIPS</span><p>These audio cases illustrate interaction patterns; they are not live voice-agent evaluation runs. The six non-English examples have not had independent native-speaker review. Interruptions, backchannels, recovery, and follow-up are represented in the recordings and event notes.</p></aside>
+
+        <div class="case-tabs" role="tablist" aria-label="Audio cases by task level">
+          <button id="case-tab-l1" class="case-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="case-panel-l1" data-case-level="l1"><span>LEVEL 1</span><b>Controlled capabilities</b><small>8 cases · backchannels and corrections</small></button>
+          <button id="case-tab-l2" class="case-tab" type="button" role="tab" aria-selected="false" aria-controls="case-panel-l2" data-case-level="l2" tabindex="-1"><span>LEVEL 2</span><b>First sales contact</b><small>8 cases · interruption and recovery</small></button>
+          <button id="case-tab-l2p" class="case-tab" type="button" role="tab" aria-selected="false" aria-controls="case-panel-l2p" data-case-level="l2plus" tabindex="-1"><span>LEVEL 2+</span><b>Permissioned follow-up</b><small>8 cases · linked first contact and callback</small></button>
+        </div>
+        <section id="case-panel-l1" class="case-panel" role="tabpanel" aria-labelledby="case-tab-l1">
+          <div class="case-panel-heading"><div><span class="level-kicker">LEVEL 1 / CONTROLLED CAPABILITIES</span><h3>Small, targeted interaction tests</h3></div><p>English has two distinct cases. Each other paper language has one selected case.</p></div>
+          <div id="case-grid-l1" class="audio-case-grid"></div>
+        </section>
+        <section id="case-panel-l2" class="case-panel" role="tabpanel" aria-labelledby="case-tab-l2" hidden>
+          <div class="case-panel-heading"><div><span class="level-kicker">LEVEL 2 / FIRST CONTACT</span><h3>Needs, an interruption, and a complete close</h3></div><p>English has two scenarios; Arabic, Chinese, Hindi, Japanese, Spanish, and Thai each have one.</p></div>
+          <div id="case-grid-l2" class="audio-case-grid"></div>
+        </section>
+        <section id="case-panel-l2p" class="case-panel" role="tabpanel" aria-labelledby="case-tab-l2p" hidden>
+          <div class="case-panel-heading"><div><span class="level-kicker">LEVEL 2+ / PERMISSIONED FOLLOW-UP</span><h3>Listen to the linked contact and callback</h3></div><p>Each card links the Level 2 first-contact baseline and the separate follow-up recording. English has two linked scenarios.</p></div>
+          <div id="case-grid-l2plus" class="audio-case-grid"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section section-customer" id="simulation" aria-labelledby="simulation-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div><p class="section-label"><span>05</span> SALESVOICE-CUSTOMERAGENT / PIPELINE</p><h2 id="simulation-title">A customer model with<br><em>visible boundaries.</em></h2></div>
+          <p class="section-intro-copy">The CustomerAgent represents needs as fixed constraints and softer preferences, then updates its state from what it actually receives during the conversation.</p>
+        </div>
+        <figure class="web-figure customer-pipeline-figure" aria-labelledby="figure3-caption">
+          <div class="web-figure-heading"><div><span>FIGURE 3 · CUSTOMERAGENT PIPELINE</span><h3>From a registered task to an evidence-backed judgment</h3></div></div>
+          <a class="figure-image-link figure-image-link-wide" href="assets/paper-figures/figure3-preview.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 3 image">
+            <img class="paper-image" src="assets/paper-figures/figure3-preview.png" alt="Figure 3 shows task input, spoken interaction between the evaluated voice agent and CustomerAgent, observable evidence, and Reasoner outputs." width="1800" height="703" loading="lazy">
+          </a>
+          <figcaption id="figure3-caption">Figure 3. SalesVoice-Task, CustomerAgent, and Reasoner pipeline. Select the image to open it at full size.</figcaption>
+        </figure>
+        <div class="customer-demo figure-sheet">
+          <div class="demo-copy">
+            <p class="figure-label">INTERACTIVE EXAMPLE <span>/</span> CONCEPTUAL ONLY</p>
+            <h3>What changes after a concern is addressed?</h3>
+            <p>This small example illustrates the state design. The customer profile and price are invented; they are not experimental results from the paper.</p>
+            <button id="address-concern" class="button button-primary" type="button" aria-pressed="false">Show a clear total price <span aria-hidden="true">→</span></button>
+            <button id="reset-concern" class="button button-quiet" type="button">Reset example</button>
+          </div>
+          <div class="state-demo" aria-live="polite">
+            <div class="state-demo-head"><span class="avatar avatar-customer">C</span><div><b>Illustrative customer</b><small>state before and after a delivered response</small></div><span class="private-tag"><i aria-hidden="true">⌑</i> PRIVATE STATE</span></div>
+            <div class="state-track">
+              <div class="state-item fixed-state"><span class="state-item-label">HARD CONSTRAINT</span><b>Budget ≤ $80</b><small>Fixed for this task</small><span class="state-lock" aria-hidden="true">LOCKED</span></div>
+              <div class="state-item soft-state" id="soft-state"><span class="state-item-label">SOFT PREFERENCE</span><b id="preference-title">Predictable monthly cost</b><small id="preference-status">Price detail is still unclear</small><span class="state-status" id="preference-badge">OPEN</span></div>
+            </div>
+            <div class="state-demo-foot"><span id="state-demo-message">No response has been applied yet.</span><span class="state-arrow" aria-hidden="true">↻</span></div>
+          </div>
+        </div>
+        <p class="customer-principle"><span aria-hidden="true">↳</span> Separate the update, the customer’s next action, and the spoken response so decisions are easier to inspect.</p>
+      </div>
+    </section>
+
+    <section class="section section-architecture" id="reasoner" aria-labelledby="architecture-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div><p class="section-label"><span>06</span> SALESVOICE-REASONER</p><h2 id="architecture-title">Evaluate what the<br><em>interaction can support.</em></h2></div>
+          <p class="section-intro-copy">The Reasoner scores eligible public evidence against explicit evaluation opportunities. Private customer state and final sales outcomes are kept out of the behavioral judgment.</p>
+        </div>
+        <div class="reasoner-principles-grid">
+          <article><span>01 / OPPORTUNITY</span><h3>Score what the task made possible</h3><p>Evaluate a factor only when its defined interaction opportunity is present.</p></article>
+          <article><span>02 / ATTRIBUTION</span><h3>Trace a judgment to evidence</h3><p>Use the relevant speaker, delivered event, and response scope to support each claim.</p></article>
+          <article><span>03 / SEPARATION</span><h3>Keep process and outcome distinct</h3><p>Report observable sales behavior apart from a purchase decision shaped by customer constraints.</p></article>
+        </div>
+        <div class="reasoner-note"><span class="note-mark" aria-hidden="true">i</span><p>Evidence attribution limits a judgment to what the relevant speaker, event, and response scope can support. A final purchase label does not stand in for process quality.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-findings" id="findings" aria-labelledby="findings-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div><p class="section-label"><span>07</span> WHAT THE EXPERIMENTS SHOW</p><h2 id="findings-title">Different measures<br><em>tell different stories.</em></h2></div>
+          <p class="section-intro-copy">Experiments cover 16 system configurations. Across the results, purchase outcomes, process quality, customer simulation, and follow-up each need their own reading.</p>
+        </div>
+
+        <div class="finding-grid">
+          <article class="finding-card finding-outcome">
+            <div class="finding-card-heading"><span class="finding-index">01</span><span class="finding-kicker">LEVEL 2 / PROCESS ≠ OUTCOME</span></div>
+            <h3>Purchase rates do not rank process quality.</h3>
+            <p class="finding-lead">Two reported configurations illustrate why both measures belong in the report.</p>
+            <div class="comparison-chart" role="img" aria-label="Qwen3-Omni-30B: purchase 42.6 percent, factual score 39.1 percent. SV-Ref B4: purchase 31.6 percent, factual score 98.9 percent.">
+              <div class="chart-legend"><span><i class="legend-purchase"></i>Purchase</span><span><i class="legend-fact"></i>Fact</span></div>
+              <div class="chart-row"><div class="chart-model"><b>Qwen3-Omni-30B</b><small>Level 2</small></div><div class="chart-values"><span class="bar-value purchase-value" style="--bar:42.6%"><i></i><b>42.6%</b></span><span class="bar-value fact-value" style="--bar:39.1%"><i></i><b>39.1%</b></span></div></div>
+              <div class="chart-row"><div class="chart-model"><b>SV-Ref / B4</b><small>Level 2</small></div><div class="chart-values"><span class="bar-value purchase-value" style="--bar:31.6%"><i></i><b>31.6%</b></span><span class="bar-value fact-value" style="--bar:98.9%"><i></i><b>98.9%</b></span></div></div>
+              <div class="chart-scale"><span>0</span><span>50</span><span>100%</span></div>
+            </div>
+            <p class="chart-note">Reported Level 2 percentages. Each metric has its own eligible denominator; these are not paired per-call scores.</p>
+          </article>
+
+          <article class="finding-card finding-ablation">
+            <div class="finding-card-heading"><span class="finding-index">02</span><span class="finding-kicker">CUSTOMERAGENT / ABLATION</span></div>
+            <h3>Structured customer modeling improved decision-direction agreement.</h3>
+            <p class="finding-lead">Human-rated responses in the English-core ablation, 50 scored responses per row.</p>
+            <div class="ablation-chart" role="img" aria-label="Human decision-direction agreement: U0 Generic LLM 38 percent, U1 plus persona 58 percent, U2 plus explicit state 68 percent, full CustomerAgent 84 percent.">
+              <div class="ablation-gridline"><span>100%</span><i></i></div><div class="ablation-gridline"><span>50%</span><i></i></div><div class="ablation-gridline"><span>0%</span><i></i></div>
+              <div class="ablation-bars">
+                <div class="ablation-bar" style="--bar:38%"><span class="ablation-value">38%</span><i></i><b>U0</b><small>Generic</small></div>
+                <div class="ablation-bar" style="--bar:58%"><span class="ablation-value">58%</span><i></i><b>U1</b><small>+ Persona</small></div>
+                <div class="ablation-bar" style="--bar:68%"><span class="ablation-value">68%</span><i></i><b>U2</b><small>+ State</small></div>
+                <div class="ablation-bar ablation-full" style="--bar:84%"><span class="ablation-value">84%</span><i></i><b>Full</b><small>CustomerAgent</small></div>
+              </div>
+            </div>
+            <p class="chart-note">This is customer-simulator decision agreement, not the voice agent’s purchase rate.</p>
+          </article>
+
+          <article class="finding-card finding-followup">
+            <div class="finding-card-heading"><span class="finding-index">03</span><span class="finding-kicker">LEVEL 2+ / FOLLOW-UP</span></div>
+            <div class="followup-mark" aria-hidden="true"><span>FOLLOW-UP</span><i>↗</i><b>≠</b><span>GUARANTEED BENEFIT</span></div>
+            <h3>Permission enables another call; it does not ensure a better result.</h3>
+            <p>The reported follow-up comparisons show no consistent improvement. Follow-up eligibility, permission, context retention, and additional contacts are tracked separately.</p>
+          </article>
+
+          <article class="finding-card finding-validation">
+            <div class="finding-card-heading"><span class="finding-index">04</span><span class="finding-kicker">REASONER / HUMAN REFERENCE</span></div>
+            <h3>A focused evaluator check on English-core cases.</h3>
+            <div class="validation-metrics"><div><strong>83.3%</strong><span>Cue accuracy</span></div><div><strong>81.7%</strong><span>Handling accuracy</span></div><div><strong>83.3%</strong><span>Factual-support accuracy</span></div></div>
+            <p class="chart-note">Primary transcript-based evaluator; 60 independently annotated cases. Results are limited to these judgment targets and cases.</p>
+          </article>
+        </div>
+
+        <aside class="scope-caveat"><span class="caveat-mark">READ IN CONTEXT</span><p>Results apply to the tested configurations and task allocations. Moshi was evaluated in English only. The paper identifies broader independent human validation, language coverage, and longer follow-up as future work.</p></aside>
+      </div>
+    </section>
+
+    <section class="closing section-shell" aria-labelledby="closing-title">
+      <div class="closing-mark" aria-hidden="true"><span class="brand-mark"><i></i><i></i><i></i><i></i></span></div>
+      <div><p class="section-label">SALESVOICE-BENCH</p><h2 id="closing-title">Hear the call.<br><em>Account for the process.</em></h2><p>A process-aware benchmark for evaluating voice agents in telephone sales.</p></div>
+      <div class="closing-links"><a href="#cases">Listen to selected audio cases <span aria-hidden="true">↗</span></a><a href="#top">Back to the top <span aria-hidden="true">↑</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell"><span>SalesVoice-Bench</span><span>Research overview and audio cases · v5</span><a href="#top">Return to top ↑</a></footer>
+</body>
+</html>

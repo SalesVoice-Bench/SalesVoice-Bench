@@ -1,0 +1,73 @@
+{
+  "level": "Level 1",
+  "episode_id": "L1-I3-correction-recovery",
+  "language": "ar",
+  "task_type": "I3: stop for an in-turn correction, acknowledge it and resume",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 21.528,
+  "audio_sha256": "07966c51cd517b375b26a1ed62ab5576f93e5138e4b3192502305ff2ee511ee0",
+  "groups": [
+    {
+      "group_id": "seller_partial",
+      "start_s": 0.0,
+      "end_s": 7.68,
+      "duration_s": 7.68,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly and informative, mid-explanation; end as if the thought is still continuing.",
+          "text": "مجموعة Willow Sensor تكلفتها أربعة وثمانون دولارًا لمرة واحدة، وتشمل ثلاثة أجهزة استشعار، و—"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_interrupt",
+      "start_s": 2.918,
+      "end_s": 8.478,
+      "duration_s": 5.56,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; cut in naturally without shouting.",
+          "text": "آسف للمقاطعة—حدي الأقصى هو ستون دولارًا إجمالًا، ولا أرغب في خطة شهرية."
+        }
+      ]
+    },
+    {
+      "group_id": "recovery",
+      "start_s": 8.728,
+      "end_s": 21.528,
+      "duration_s": 12.8,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Immediately attentive and empathetic; slow down, acknowledge the correction and avoid pressure.",
+          "text": "شكرًا لك على إيقافي. بحد أقصى ستين دولارًا، المجموعة التي تكلفتها أربعة وثمانون دولارًا لا تناسبك، لذلك لن أوصي بها."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Reassured and matter-of-fact, with a small appreciative lift.",
+          "text": "بالضبط. شكرًا لاستماعك."
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "floor_taking_barge_in_then_recovery",
+      "base_group": "seller_partial",
+      "overlap_group": "customer_interrupt",
+      "overlap_start_s": 2.918,
+      "overlap_end_s": 7.68,
+      "component_window_overlap_s": 4.762,
+      "energy_gate_active_overlap_estimate_s": 4.242,
+      "expected_response": "customer's correction overlaps the unfinished seller turn; seller yields, acknowledges and restates the constraint"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

@@ -1,0 +1,54 @@
+{
+  "level": "Level 1",
+  "episode_id": "L1-I1-backchannel",
+  "language": "th",
+  "task_type": "I1: distinguish a listener backchannel from a floor claim",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 15.92,
+  "audio_sha256": "40fce3fcd09e44761776ba15196ee96ffdae9f1c2bf1e13492c25fb5e717d2c7",
+  "groups": [
+    {
+      "group_id": "seller",
+      "start_s": 0.0,
+      "end_s": 15.92,
+      "duration_s": 15.92,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, lightly upbeat and conversational; clear, measured delivery, like a patient home-safety adviser.",
+          "text": "ชุด Willow Sensor ราคา 84 ดอลลาร์ จ่ายครั้งเดียว และมีเซ็นเซอร์ 3 ตัวสำหรับประตูหรืออ่างล้างจาน การแจ้งเตือนพื้นฐานจะเป็นแบบในพื้นที่ ส่วนการเฝ้าระวังทางโทรศัพท์จากระยะไกลแบบเลือกได้ จะมีค่าใช้จ่าย 9 ดอลลาร์ต่อเดือนครับ/ค่ะ"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_backchannel",
+      "start_s": 6.846,
+      "end_s": 7.806,
+      "duration_s": 0.96,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "A brief, natural, friendly acknowledgment; soft and engaged, not a request to take the floor.",
+          "text": "ครับ/ค่ะ"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "seller",
+      "overlap_group": "customer_backchannel",
+      "overlap_start_s": 6.846,
+      "overlap_end_s": 7.806,
+      "component_window_overlap_s": 0.96,
+      "energy_gate_active_overlap_estimate_s": 0.22,
+      "expected_response": "seller continues the sentence without yielding the floor"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

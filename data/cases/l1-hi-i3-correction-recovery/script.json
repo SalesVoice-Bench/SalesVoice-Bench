@@ -1,0 +1,57 @@
+{
+  "id": "L1-I3-correction-recovery",
+  "level": "Level 1",
+  "task_type": "I3: stop for an in-turn correction, acknowledge it and resume",
+  "mix_plan": {
+    "groups_in_order": [
+      "seller_partial",
+      "customer_interrupt",
+      "recovery"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.38,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "customer's correction overlaps the unfinished seller turn; seller yields, acknowledges and restates the constraint"
+  },
+  "groups": [
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly and informative, mid-explanation; end as if the thought is still continuing.",
+          "text": "विलौ सेंसर किट एक बार में चौरासी डॉलर की है, इसमें तीन सेंसर शामिल हैं, और—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.38,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; cut in naturally without shouting.",
+          "text": "माफ़ कीजिए, बीच में बोलने के लिए—मेरी अधिकतम सीमा कुल साठ डॉलर है, और मुझे मासिक प्लान नहीं चाहिए।"
+        }
+      ]
+    },
+    {
+      "id": "recovery",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Immediately attentive and empathetic; slow down, acknowledge the correction and avoid pressure.",
+          "text": "मुझे रोकने के लिए धन्यवाद। साठ डॉलर की सीमा के साथ, चौरासी डॉलर वाली किट उपयुक्त नहीं है, इसलिए मैं इसकी सिफ़ारिश नहीं करूँगा।"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Reassured and matter-of-fact, with a small appreciative lift.",
+          "text": "बिल्कुल। सुनने के लिए धन्यवाद।"
+        }
+      ]
+    }
+  ]
+}

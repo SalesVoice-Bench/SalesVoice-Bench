@@ -1,0 +1,63 @@
+{
+  "id": "L2plus-permissioned-followup",
+  "level": "Level 2+",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "linked_level2_episode": "L2-first-contact",
+  "callback_window": "2026-11-10 after 10:00 UTC",
+  "mix_plan": {
+    "groups_in_order": [
+      "callback_opening",
+      "customer_acknowledgment",
+      "followup_resolution"
+    ],
+    "backchannel_start_fraction_of_base": 0.67,
+    "expected_handling": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+  },
+  "groups": [
+    {
+      "id": "callback_opening",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "नमस्ते, मैं विलौ होम सेफ़्टी से एलेक्स बोल रहा हूँ, आपको उस समय कॉल कर रहा हूँ जिसकी आपने अनुमति दी थी। पिछली बार आपको तीन जगहों के लिए, अधिकतम साठ डॉलर और कोई सब्सक्रिप्शन नहीं चाहिए था। क्या यह अभी भी सही लग रहा है?"
+        }
+      ]
+    },
+    {
+      "id": "customer_acknowledgment",
+      "mode": "single",
+      "overlay_on": "callback_opening",
+      "overlap_start_fraction_of_base": 0.67,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "हाँ, यह अभी भी सही है।"
+        }
+      ]
+    },
+    {
+      "id": "followup_resolution",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "पुष्टि करने के लिए धन्यवाद। मैंने एंट्रीसेंस मिनी की जाँच की: इसकी कीमत एक बार में उनचास डॉलर है, इसमें दो सेंसर शामिल हैं, यह स्थानीय अलर्ट देता है और इसकी नब्बे दिन की वारंटी है। मैं यह पुष्टि नहीं कर सकता कि अतिरिक्त सेंसर जोड़े जा सकते हैं, इसलिए मैं यह नहीं कह सकता कि यह आपकी ज़रूरत की तीनों जगहों को कवर करता है।"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "तो यह मेरे घर के लिए पर्याप्त नहीं है। अनुमान लगाने के बजाय जाँच करने के लिए धन्यवाद। कृपया नोट कर लें कि मुझे कोई और कॉल नहीं चाहिए।"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "समझ गया। यह आपकी तीन-जगहों की आवश्यकता को पूरा नहीं करता है, और मैं आपसे दोबारा संपर्क नहीं करूँगा। आपके समय के लिए धन्यवाद।"
+        }
+      ]
+    }
+  ]
+}

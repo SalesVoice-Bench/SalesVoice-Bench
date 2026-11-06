@@ -1,0 +1,107 @@
+{
+  "level": "Level 2",
+  "episode_id": "L2-first-contact",
+  "language": "ja",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 87.74,
+  "audio_sha256": "ab38dc6fd1b2ec17b4b533415a92b639a65065b431945a2646ceaaa4cd171b02",
+  "groups": [
+    {
+      "group_id": "opening",
+      "start_s": 0.0,
+      "end_s": 30.56,
+      "duration_s": 30.56,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "こんにちは、Willow Home Safetyのアレックスです。お電話に出ていただきありがとうございます。今、少しだけご説明させていただいてもよろしいでしょうか？"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "はい、少し時間があります。ドアかシンクの3箇所をカバーしたいのですが、前払いの上限は60ドルで、サブスクリプションは希望しません。"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "承知いたしました。3箇所、前払い60ドルまで、月額プランなしですね。適合するかどうか、慎重に確認いたします。"
+        }
+      ]
+    },
+    {
+      "group_id": "seller_partial",
+      "start_s": 30.81,
+      "end_s": 42.57,
+      "duration_s": 11.76,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "Willow Sensorキットにはセンサーが3つ含まれており、一度のお支払いで84ドルです。リモート電話監視はオプションで月額9ドルですが、その—"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_interrupt",
+      "start_s": 35.514,
+      "end_s": 41.674,
+      "duration_s": 6.16,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "割り込んで申し訳ありませんが、60ドルが私の合計の上限で、月額プランは利用しません。"
+        }
+      ]
+    },
+    {
+      "group_id": "recovery_and_close",
+      "start_s": 42.82,
+      "end_s": 87.74,
+      "duration_s": 44.92,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "はっきりさせてくださってありがとうございます。84ドルのこのキットは、お客様の上限を超えていますので、適合するものとしてはご提案いたしません。月額料金なしで、より安価な3センサーのオプションがあるか確認することはできますが、お約束はできません。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "それは助かります。11月10日のUTC午前10時以降に、月額料金なしのオプションについてのみ、お電話いただけますか？"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "お客様のご許可をいただければ、11月10日のUTC午前10時以降に、その特定の件についてお電話いたします。本日、ご購入やご契約の義務はございません。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "その電話でのフォローアップに同意します。他の連絡は不要です。"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "floor_taking_barge_in_then_recovery",
+      "base_group": "seller_partial",
+      "overlap_group": "customer_interrupt",
+      "overlap_start_s": 35.514,
+      "overlap_end_s": 41.674,
+      "component_window_overlap_s": 6.16,
+      "energy_gate_active_overlap_estimate_s": 5.6,
+      "expected_response": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

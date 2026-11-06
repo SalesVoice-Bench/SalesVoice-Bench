@@ -1,0 +1,54 @@
+{
+  "level": "Level 1",
+  "episode_id": "L1-I1-backchannel",
+  "language": "ja",
+  "task_type": "I1: distinguish a listener backchannel from a floor claim",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 15.04,
+  "audio_sha256": "5c87fe3fc88341893494c56eca0c6e3672ea5b36fa13cd83770aa998a087306e",
+  "groups": [
+    {
+      "group_id": "seller",
+      "start_s": 0.0,
+      "end_s": 15.04,
+      "duration_s": 15.04,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, lightly upbeat and conversational; clear, measured delivery, like a patient home-safety adviser.",
+          "text": "Willow Sensorキットは、一度のお支払いで84ドルです。ドアやシンク用のセンサーが3つ含まれており、基本的なアラートはローカルで、オプションのリモート電話監視は月額9ドルとなります。"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_backchannel",
+      "start_s": 6.467,
+      "end_s": 7.627,
+      "duration_s": 1.16,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "A brief, natural, friendly acknowledgment; soft and engaged, not a request to take the floor.",
+          "text": "ええ。"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "seller",
+      "overlap_group": "customer_backchannel",
+      "overlap_start_s": 6.467,
+      "overlap_end_s": 7.627,
+      "component_window_overlap_s": 1.16,
+      "energy_gate_active_overlap_estimate_s": 0.52,
+      "expected_response": "seller continues the sentence without yielding the floor"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

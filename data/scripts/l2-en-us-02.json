@@ -1,0 +1,90 @@
+{
+  "id": "L2-first-contact-en-US-02",
+  "level": "Level 2",
+  "language": "en-US",
+  "scenario": "CedarDesk CRM; three seats; a $75 total monthly budget; CSV export; month-to-month terms; shared decision with a cofounder.",
+  "mix_plan": {
+    "groups_in_order": [
+      "opening",
+      "seller_partial",
+      "customer_interrupt",
+      "recovery_and_close"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.42,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "yield to the price clarification, confirm the total and terms, and obtain specific permission for one phone follow-up"
+  },
+  "groups": [
+    {
+      "id": "opening",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, upbeat, and unhurried; sound like a thoughtful human caller, not an announcer.",
+          "text": "Hi, this is Maya calling from CedarDesk. Did I catch you with a minute to talk about your team's customer follow-up?"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Friendly but practical; natural conversational pacing.",
+          "text": "I did request information. We're a small team of three, and we need a simple CRM. I need the whole monthly bill at or under seventy-five dollars, downloadable CSV, and no annual commitment."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; clearly reflect the requirements without sounding scripted.",
+          "text": "Thanks. Three seats, seventy-five dollars total or less, CSV export, and month-to-month. I'll check all four before I suggest anything."
+        }
+      ]
+    },
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Clear product explanation; leave the final phrase open for a polite interruption.",
+          "text": "The CedarDesk Starter plan is twenty-two dollars per seat each month, with a three-seat minimum, so that's sixty-six dollars monthly; and you can—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.42,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite, lightly urgent, never shouting; begin while the seller is still speaking.",
+          "text": "Sorry, can I check, that's sixty-six for all three, not per person on top of a base fee? And is the annual term required?"
+        }
+      ]
+    },
+    {
+      "id": "recovery_and_close",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yield promptly, then answer with calm confidence and a little warmth.",
+          "text": "Yes, sixty-six total for three seats, with no setup fee. It's month-to-month, and CSV export is available whenever you need it. That fits the price, export, and term you asked for. Would you like to consider next steps?"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful, open, and unhurried; show that another decision maker matters.",
+          "text": "Those terms fit. My cofounder has an equal say, so we'd like to compare two options together before deciding. Could you call Tuesday, November third, after ten a.m. UTC? Phone only, just to review the comparison."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and precise; confirm the scope and time without adding any contact channel.",
+          "text": "With your permission, I'll make one phone call on Tuesday, November third, after ten a.m. UTC, just to review the comparison. I won't email or contact you another way."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Clear and definite, with a friendly closing tone.",
+          "text": "Yes, that time works for that phone call. Just that call, please. We haven't decided to buy."
+        }
+      ]
+    }
+  ]
+}

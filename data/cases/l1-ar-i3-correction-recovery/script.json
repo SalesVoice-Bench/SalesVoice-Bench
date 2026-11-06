@@ -1,0 +1,57 @@
+{
+  "id": "L1-I3-correction-recovery",
+  "level": "Level 1",
+  "task_type": "I3: stop for an in-turn correction, acknowledge it and resume",
+  "mix_plan": {
+    "groups_in_order": [
+      "seller_partial",
+      "customer_interrupt",
+      "recovery"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.38,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "customer's correction overlaps the unfinished seller turn; seller yields, acknowledges and restates the constraint"
+  },
+  "groups": [
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly and informative, mid-explanation; end as if the thought is still continuing.",
+          "text": "مجموعة Willow Sensor تكلفتها أربعة وثمانون دولارًا لمرة واحدة، وتشمل ثلاثة أجهزة استشعار، و—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.38,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; cut in naturally without shouting.",
+          "text": "آسف للمقاطعة—حدي الأقصى هو ستون دولارًا إجمالًا، ولا أرغب في خطة شهرية."
+        }
+      ]
+    },
+    {
+      "id": "recovery",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Immediately attentive and empathetic; slow down, acknowledge the correction and avoid pressure.",
+          "text": "شكرًا لك على إيقافي. بحد أقصى ستين دولارًا، المجموعة التي تكلفتها أربعة وثمانون دولارًا لا تناسبك، لذلك لن أوصي بها."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Reassured and matter-of-fact, with a small appreciative lift.",
+          "text": "بالضبط. شكرًا لاستماعك."
+        }
+      ]
+    }
+  ]
+}

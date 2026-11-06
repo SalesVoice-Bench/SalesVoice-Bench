@@ -1,0 +1,107 @@
+{
+  "level": "Level 2",
+  "episode_id": "L2-first-contact",
+  "language": "th",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 93.372,
+  "audio_sha256": "ccc6d9d32ba71469ffe56cb2440db75abcc413d91eed8c911a1049f4c77b9573",
+  "groups": [
+    {
+      "group_id": "opening",
+      "start_s": 0.0,
+      "end_s": 28.48,
+      "duration_s": 28.48,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "สวัสดีครับ/ค่ะ ผม/ดิฉันอเล็กซ์จาก Willow Home Safety ครับ/ค่ะ ขอบคุณที่รับสายนะครับ/คะ ตอนนี้สะดวกให้ผม/ดิฉันแนะนำสั้นๆ ไหมครับ/คะ"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "ครับ/ค่ะ มีเวลาครับ/ค่ะ ผม/ดิฉันต้องการครอบคลุม 3 จุดสำหรับประตูหรืออ่างล้างจาน วงเงินสูงสุดที่จ่ายครั้งเดียวของผม/ดิฉันคือ 60 ดอลลาร์ และผม/ดิฉันไม่ต้องการแบบสมัครสมาชิกครับ/ค่ะ"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "รับทราบครับ/ค่ะ 3 จุด ไม่เกิน 60 ดอลลาร์ที่จ่ายครั้งเดียว และไม่มีแผนรายเดือน ผม/ดิฉันจะตรวจสอบความเหมาะสมอย่างละเอียดครับ/ค่ะ"
+        }
+      ]
+    },
+    {
+      "group_id": "seller_partial",
+      "start_s": 28.73,
+      "end_s": 39.81,
+      "duration_s": 11.08,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "ชุด Willow Sensor มีเซ็นเซอร์ 3 ตัว ราคา 84 ดอลลาร์ จ่ายครั้งเดียว การเฝ้าระวังทางโทรศัพท์จากระยะไกลเป็นแบบเลือกได้ มีค่าใช้จ่าย 9 ดอลลาร์ต่อเดือน และ—"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_interrupt",
+      "start_s": 33.162,
+      "end_s": 40.522,
+      "duration_s": 7.36,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "ขอโทษที่แทรกนะครับ/คะ 60 ดอลลาร์คือวงเงินสูงสุดทั้งหมดของผม/ดิฉัน และผม/ดิฉันจะไม่รับแผนรายเดือนครับ/ค่ะ"
+        }
+      ]
+    },
+    {
+      "group_id": "recovery_and_close",
+      "start_s": 40.772,
+      "end_s": 93.372,
+      "duration_s": 52.6,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "ขอบคุณที่ชี้แจงนะครับ/คะ ที่ราคา 84 ดอลลาร์ ชุดนี้เกินวงเงินของคุณครับ/ค่ะ ผม/ดิฉันจึงจะไม่เสนอว่ามันตรงตามความต้องการของคุณครับ/ค่ะ ผม/ดิฉันสามารถตรวจสอบได้ว่ามีตัวเลือกเซ็นเซอร์ 3 ตัวที่ราคาถูกกว่าและไม่มีค่าธรรมเนียมรายเดือนหรือไม่ แต่ผม/ดิฉันไม่สามารถรับปากได้ครับ/ค่ะ"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "นั่นคงจะช่วยได้ครับ/ค่ะ คุณช่วยโทรหาผม/ดิฉันในวันที่ 10 พฤศจิกายน หลัง 10 โมงเช้า UTC ได้ไหมครับ/คะ เพื่อคุยเกี่ยวกับตัวเลือกที่ไม่มีค่าธรรมเนียมรายเดือนเท่านั้น"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "ถ้าคุณอนุญาต ผม/ดิฉันจะโทรหาในวันที่ 10 พฤศจิกายน หลัง 10 โมงเช้า UTC เพื่อคุยเรื่องนั้นโดยเฉพาะครับ/ค่ะ วันนี้ยังไม่มีการซื้อหรือข้อผูกมัดใดๆ ครับ/ค่ะ"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "ผม/ดิฉันตกลงให้โทรติดตามผลทางโทรศัพท์ครับ/ค่ะ กรุณาอย่าติดต่อทางอื่นอีกนะครับ/คะ"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "floor_taking_barge_in_then_recovery",
+      "base_group": "seller_partial",
+      "overlap_group": "customer_interrupt",
+      "overlap_start_s": 33.162,
+      "overlap_end_s": 39.81,
+      "component_window_overlap_s": 6.648,
+      "energy_gate_active_overlap_estimate_s": 6.288,
+      "expected_response": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "L2plus-permissioned-followup-en-US-02",
+  "level": "Level 2+",
+  "language": "en-US",
+  "scenario": "One customer-authorized phone follow-up on Tuesday, November 3, 2026 after 10:00 UTC, continuing the CedarDesk first contact.",
+  "mix_plan": {
+    "groups_in_order": [
+      "callback_opening",
+      "customer_acknowledgment",
+      "followup_resolution"
+    ],
+    "acknowledgment_start_fraction_of_callback_opening": 0.62,
+    "resolution_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "restore the agreed context, honor the one-call limit, and confirm no further outreach"
+  },
+  "groups": [
+    {
+      "id": "callback_opening",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, concise, and natural; make clear why this call is happening and check the customer's availability.",
+          "text": "Hello, this is Maya from CedarDesk, calling Tuesday, November third, as you requested. Is now still a good time for that brief comparison call?"
+        }
+      ]
+    },
+    {
+      "id": "customer_acknowledgment",
+      "mode": "single",
+      "overlay_on": "callback_opening",
+      "overlap_start_fraction_of_base": 0.62,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "A brief, relaxed listening acknowledgment; start over the seller naturally, without taking the floor.",
+          "text": "Mm-hmm, yes."
+        }
+      ]
+    },
+    {
+      "id": "followup_resolution",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Attentive and conversational; recall each important term plainly, with a small pause between facts.",
+          "text": "Last time we confirmed three seats for sixty-six dollars total each month, no setup fee, CSV export, and a month-to-month plan. Is that still the comparison you'd like to review?"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and engaged; acknowledge the accurate recall, then set a firm contact boundary.",
+          "text": "Yes, that's right, and those terms still fit. My cofounder and I compared it with one other option. We're not ready to choose today, and please don't call or email again. I'll reach out if we want a demo."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Warm, respectful, and unambiguous; do not add another sales ask.",
+          "text": "Understood. I won't contact you again. Thanks for taking the time, and have a good day."
+        }
+      ]
+    }
+  ]
+}

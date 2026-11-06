@@ -1,0 +1,54 @@
+{
+  "level": "Level 1",
+  "episode_id": "L1-I1-backchannel",
+  "language": "zh",
+  "task_type": "I1: distinguish a listener backchannel from a floor claim",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 12.96,
+  "audio_sha256": "d5918977bfd0b39d6e6f9a00e48e7be69b588935481f1308c2ea6352eff1cfb5",
+  "groups": [
+    {
+      "group_id": "seller",
+      "start_s": 0.0,
+      "end_s": 12.96,
+      "duration_s": 12.96,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, lightly upbeat and conversational; clear, measured delivery, like a patient home-safety adviser.",
+          "text": "Willow Sensor 套件一次性售价八十四美元，包含三个传感器，可用于门或水槽；基本警报是本地的，可选的远程电话监控每月九美元。"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_backchannel",
+      "start_s": 5.573,
+      "end_s": 6.373,
+      "duration_s": 0.8,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "A brief, natural, friendly acknowledgment; soft and engaged, not a request to take the floor.",
+          "text": "嗯。"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "seller",
+      "overlap_group": "customer_backchannel",
+      "overlap_start_s": 5.573,
+      "overlap_end_s": 6.373,
+      "component_window_overlap_s": 0.8,
+      "energy_gate_active_overlap_estimate_s": 0.24,
+      "expected_response": "seller continues the sentence without yielding the floor"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

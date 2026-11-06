@@ -1,0 +1,63 @@
+{
+  "id": "L2plus-permissioned-followup",
+  "level": "Level 2+",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "linked_level2_episode": "L2-first-contact",
+  "callback_window": "2026-11-10 after 10:00 UTC",
+  "mix_plan": {
+    "groups_in_order": [
+      "callback_opening",
+      "customer_acknowledgment",
+      "followup_resolution"
+    ],
+    "backchannel_start_fraction_of_base": 0.67,
+    "expected_handling": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+  },
+  "groups": [
+    {
+      "id": "callback_opening",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "مرحبًا، معك أليكس من Willow Home Safety، أتصل بك في الوقت الذي وافقت عليه. في المرة الماضية، كنت تحتاج ثلاثة مواقع، بحد أقصى ستين دولارًا وبدون اشتراك. هل هذا لا يزال صحيحًا؟"
+        }
+      ]
+    },
+    {
+      "id": "customer_acknowledgment",
+      "mode": "single",
+      "overlay_on": "callback_opening",
+      "overlap_start_fraction_of_base": 0.67,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "نعم، هذا لا يزال صحيحًا."
+        }
+      ]
+    },
+    {
+      "id": "followup_resolution",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "شكرًا للتأكيد. لقد تحققت من EntrySense Mini: تكلفتها تسعة وأربعون دولارًا لمرة واحدة، وتشمل جهازي استشعار، وتوفر تنبيهات محلية، ولديها ضمان لمدة تسعين يومًا. لا يمكنني تأكيد إمكانية إضافة أجهزة استشعار إضافية، لذلك لا يمكنني القول إنها تغطي جميع المواقع الثلاثة التي تحتاجها."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "إذن هي ليست كافية لمنزلي. شكرًا لك على التحقق بدلًا من التخمين. رجاءً سجل أنني لا أرغب في مكالمة أخرى."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "مفهوم. إنها لا تلبي متطلبك لثلاثة مواقع، ولن أتصل بك مرة أخرى. شكرًا لوقتك."
+        }
+      ]
+    }
+  ]
+}

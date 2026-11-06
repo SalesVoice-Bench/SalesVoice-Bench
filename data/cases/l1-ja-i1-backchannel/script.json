@@ -1,0 +1,37 @@
+{
+  "id": "L1-I1-backchannel",
+  "level": "Level 1",
+  "task_type": "I1: distinguish a listener backchannel from a floor claim",
+  "mix_plan": {
+    "base_group": "seller",
+    "overlap_group": "customer_backchannel",
+    "overlap_start_fraction_of_base": 0.43,
+    "expected_handling": "seller continues the sentence without yielding the floor"
+  },
+  "groups": [
+    {
+      "id": "seller",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, lightly upbeat and conversational; clear, measured delivery, like a patient home-safety adviser.",
+          "text": "Willow Sensorキットは、一度のお支払いで84ドルです。ドアやシンク用のセンサーが3つ含まれており、基本的なアラートはローカルで、オプションのリモート電話監視は月額9ドルとなります。"
+        }
+      ]
+    },
+    {
+      "id": "customer_backchannel",
+      "mode": "single",
+      "overlay_on": "seller",
+      "overlap_start_fraction_of_base": 0.43,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "A brief, natural, friendly acknowledgment; soft and engaged, not a request to take the floor.",
+          "text": "ええ。"
+        }
+      ]
+    }
+  ]
+}

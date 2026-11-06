@@ -1,0 +1,78 @@
+{
+  "level": "Level 2+",
+  "episode_id": "L2plus-permissioned-followup",
+  "language": "ja",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 58.53,
+  "audio_sha256": "444ed88eadc7aac5e6bb269044570069435b8a9e0e39dcec8842ae058d87286c",
+  "groups": [
+    {
+      "group_id": "callback_opening",
+      "start_s": 0.0,
+      "end_s": 14.96,
+      "duration_s": 14.96,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "こんにちは、Willow Home Safetyのアレックスです。ご承認いただいた時間にお電話いたしました。前回は、3箇所、最大60ドル、サブスクリプションなしをご希望でしたね。そちらでまだよろしいでしょうか？"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_acknowledgment",
+      "start_s": 10.023,
+      "end_s": 12.903,
+      "duration_s": 2.88,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "はい、まだその通りです。"
+        }
+      ]
+    },
+    {
+      "group_id": "followup_resolution",
+      "start_s": 15.21,
+      "end_s": 58.53,
+      "duration_s": 43.32,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "ご確認ありがとうございます。EntrySense Miniについて確認いたしました。一度のお支払いで49ドルで、センサーが2つ含まれており、ローカルアラートを提供し、90日間の保証が付いています。追加のセンサーが追加できるか確認できませんでしたので、お客様が必要とされる3箇所すべてをカバーできるとは申し上げられません。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "それでは、私の家には十分ではありませんね。推測ではなく、確認してくださってありがとうございます。今後、電話は不要であることを記録しておいてください。"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "承知いたしました。3箇所の要件には合致せず、今後、お客様にご連絡することはございません。お時間をいただきありがとうございました。"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "callback_opening",
+      "overlap_group": "customer_acknowledgment",
+      "overlap_start_s": 10.023,
+      "overlap_end_s": 12.903,
+      "component_window_overlap_s": 2.88,
+      "energy_gate_active_overlap_estimate_s": 2.36,
+      "expected_response": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

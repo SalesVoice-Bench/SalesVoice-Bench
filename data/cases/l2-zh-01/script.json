@@ -1,0 +1,89 @@
+{
+  "id": "L2-first-contact",
+  "level": "Level 2",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "mix_plan": {
+    "groups_in_order": [
+      "opening",
+      "seller_partial",
+      "customer_interrupt",
+      "recovery_and_close"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.4,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+  },
+  "groups": [
+    {
+      "id": "opening",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "您好，我是 Willow Home Safety 的 Alex。谢谢您接听我的电话。现在方便我简单介绍一下吗？"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "嗯，我有一分钟时间。我需要覆盖三个门或水槽的位置，我的前期预算是六十美元，而且我不想订阅。"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "明白了：三个位置，前期不超过六十美元，没有月度套餐。我会仔细核对是否符合。"
+        }
+      ]
+    },
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "Willow Sensor 套件有三个传感器，一次性售价八十四美元；远程电话监控是可选的，每月九美元，而且——"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.4,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "抱歉打断一下——六十美元是我的最高总价，而且我不会选择月度套餐。"
+        }
+      ]
+    },
+    {
+      "id": "recovery_and_close",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "谢谢您的澄清。八十四美元的这个套件超出了您的预算，所以我不会把它作为符合您需求的产品来介绍。我可以查一下有没有更便宜的、包含三个传感器且没有月费的选项，但我不能保证一定有。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "那会有帮助。您能在世界协调时间（UTC）十一月十日上午十点以后给我打电话吗？就只谈没有月费的选项。"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "如果得到您的允许，我会在世界协调时间（UTC）十一月十日上午十点以后，就那个具体问题给您打电话。今天不需要您购买或做出任何承诺。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "我同意这次电话回访。请不要再进行其他联系了。"
+        }
+      ]
+    }
+  ]
+}

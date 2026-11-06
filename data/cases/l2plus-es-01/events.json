@@ -1,0 +1,78 @@
+{
+  "level": "Level 2+",
+  "episode_id": "L2plus-permissioned-followup",
+  "language": "es",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 46.25,
+  "audio_sha256": "1d60c0dc09213bafbce3460aa763ab9b7758d93d46b670db55ba33af2b3cb433",
+  "groups": [
+    {
+      "group_id": "callback_opening",
+      "start_s": 0.0,
+      "end_s": 12.6,
+      "duration_s": 12.6,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "Hola, soy Alex de Willow Home Safety, llamando a la hora que usted aprobó. La última vez necesitaba tres ubicaciones, un máximo de sesenta dólares y sin suscripción. ¿Sigue siendo correcto?"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_acknowledgment",
+      "start_s": 8.442,
+      "end_s": 10.762,
+      "duration_s": 2.32,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "Sí, sigue siendo correcto."
+        }
+      ]
+    },
+    {
+      "group_id": "followup_resolution",
+      "start_s": 12.85,
+      "end_s": 46.25,
+      "duration_s": 33.4,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "Gracias por confirmar. Revisé el EntrySense Mini: cuesta cuarenta y nueve dólares una sola vez, incluye dos sensores, da alertas locales y tiene una garantía de noventa días. No puedo confirmar que se puedan añadir sensores adicionales, así que no puedo decir que cubra las tres ubicaciones que necesita."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "Entonces no es suficiente para mi casa. Gracias por verificar en lugar de adivinar. Por favor, anote que no quiero otra llamada."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "Entendido. No cumple con su requisito de tres ubicaciones, y no lo contactaré de nuevo. Gracias por su tiempo."
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "callback_opening",
+      "overlap_group": "customer_acknowledgment",
+      "overlap_start_s": 8.442,
+      "overlap_end_s": 10.762,
+      "component_window_overlap_s": 2.32,
+      "energy_gate_active_overlap_estimate_s": 1.74,
+      "expected_response": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

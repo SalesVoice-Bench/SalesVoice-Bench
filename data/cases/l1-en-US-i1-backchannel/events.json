@@ -1,0 +1,54 @@
+{
+  "level": "Level 1",
+  "episode_id": "L1-I1-backchannel",
+  "language": "en-US",
+  "task_type": "I1: distinguish a listener backchannel from a floor claim",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 12.08,
+  "audio_sha256": "eaba5e7ab699b83ffa5f3062a819b9ccf5fe8c104856c35c03425efa56086d20",
+  "groups": [
+    {
+      "group_id": "seller",
+      "start_s": 0.0,
+      "end_s": 12.08,
+      "duration_s": 12.08,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, lightly upbeat and conversational; clear, measured delivery, like a patient home-safety adviser.",
+          "text": "The Willow Sensor kit costs eighty-four dollars once and includes three sensors for doors or sinks; the basic alerts are local, and optional remote phone monitoring costs nine dollars a month."
+        }
+      ]
+    },
+    {
+      "group_id": "customer_backchannel",
+      "start_s": 5.194,
+      "end_s": 6.114,
+      "duration_s": 0.92,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "A brief, natural, friendly acknowledgment; soft and engaged, not a request to take the floor.",
+          "text": "Mm-hm."
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "seller",
+      "overlap_group": "customer_backchannel",
+      "overlap_start_s": 5.194,
+      "overlap_end_s": 6.114,
+      "component_window_overlap_s": 0.92,
+      "energy_gate_active_overlap_estimate_s": 0.58,
+      "expected_response": "seller continues the sentence without yielding the floor"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

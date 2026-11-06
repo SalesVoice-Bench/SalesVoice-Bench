@@ -1,0 +1,78 @@
+{
+  "level": "Level 2+",
+  "episode_id": "L2plus-permissioned-followup",
+  "language": "ar",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 54.37,
+  "audio_sha256": "6f4f76d6bd1e094da6b85cb99c5a78d6fdfd7b6bf1e1a2c663e3aebcdc62da92",
+  "groups": [
+    {
+      "group_id": "callback_opening",
+      "start_s": 0.0,
+      "end_s": 14.4,
+      "duration_s": 14.4,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "مرحبًا، معك أليكس من Willow Home Safety، أتصل بك في الوقت الذي وافقت عليه. في المرة الماضية، كنت تحتاج ثلاثة مواقع، بحد أقصى ستين دولارًا وبدون اشتراك. هل هذا لا يزال صحيحًا؟"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_acknowledgment",
+      "start_s": 9.648,
+      "end_s": 12.648,
+      "duration_s": 3.0,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "نعم، هذا لا يزال صحيحًا."
+        }
+      ]
+    },
+    {
+      "group_id": "followup_resolution",
+      "start_s": 14.65,
+      "end_s": 54.37,
+      "duration_s": 39.72,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "شكرًا للتأكيد. لقد تحققت من EntrySense Mini: تكلفتها تسعة وأربعون دولارًا لمرة واحدة، وتشمل جهازي استشعار، وتوفر تنبيهات محلية، ولديها ضمان لمدة تسعين يومًا. لا يمكنني تأكيد إمكانية إضافة أجهزة استشعار إضافية، لذلك لا يمكنني القول إنها تغطي جميع المواقع الثلاثة التي تحتاجها."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "إذن هي ليست كافية لمنزلي. شكرًا لك على التحقق بدلًا من التخمين. رجاءً سجل أنني لا أرغب في مكالمة أخرى."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "مفهوم. إنها لا تلبي متطلبك لثلاثة مواقع، ولن أتصل بك مرة أخرى. شكرًا لوقتك."
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "callback_opening",
+      "overlap_group": "customer_acknowledgment",
+      "overlap_start_s": 9.648,
+      "overlap_end_s": 12.648,
+      "component_window_overlap_s": 3.0,
+      "energy_gate_active_overlap_estimate_s": 2.38,
+      "expected_response": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

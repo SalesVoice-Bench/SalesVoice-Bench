@@ -1,0 +1,78 @@
+{
+  "level": "Level 2+",
+  "episode_id": "L2plus-permissioned-followup",
+  "language": "th",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 57.45,
+  "audio_sha256": "867cd28dd3b541d74202037e7b65c06486a043e556893356db2ce3aaeff1c8fa",
+  "groups": [
+    {
+      "group_id": "callback_opening",
+      "start_s": 0.0,
+      "end_s": 14.2,
+      "duration_s": 14.2,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "สวัสดีครับ/ค่ะ ผม/ดิฉันอเล็กซ์จาก Willow Home Safety โทรมาตามเวลาที่คุณอนุญาตไว้ครับ/ค่ะ ครั้งที่แล้วคุณต้องการ 3 จุด วงเงินสูงสุด 60 ดอลลาร์ และไม่มีแบบสมัครสมาชิก ข้อมูลนี้ยังถูกต้องอยู่ไหมครับ/คะ"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_acknowledgment",
+      "start_s": 9.514,
+      "end_s": 11.994,
+      "duration_s": 2.48,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "ครับ/ค่ะ ยังถูกต้องอยู่ครับ/ค่ะ"
+        }
+      ]
+    },
+    {
+      "group_id": "followup_resolution",
+      "start_s": 14.45,
+      "end_s": 57.45,
+      "duration_s": 43.0,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "ขอบคุณที่ยืนยันครับ/ค่ะ ผม/ดิฉันตรวจสอบ EntrySense Mini แล้วครับ/ค่ะ ราคา 49 ดอลลาร์ จ่ายครั้งเดียว มีเซ็นเซอร์ 2 ตัว แจ้งเตือนในพื้นที่ และมีการรับประกัน 90 วัน ผม/ดิฉันไม่สามารถยืนยันได้ว่าสามารถเพิ่มเซ็นเซอร์ได้หรือไม่ ดังนั้นจึงไม่สามารถบอกได้ว่ามันครอบคลุมทั้ง 3 จุดที่คุณต้องการครับ/ค่ะ"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "ถ้าอย่างนั้นก็ไม่เพียงพอสำหรับบ้านผม/ดิฉันครับ/ค่ะ ขอบคุณที่ตรวจสอบให้แทนที่จะคาดเดาครับ/ค่ะ กรุณาบันทึกไว้ด้วยว่าผม/ดิฉันไม่ต้องการให้โทรมาอีกนะครับ/คะ"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "รับทราบครับ/ค่ะ มันไม่ตรงตามความต้องการ 3 จุดของคุณ และผม/ดิฉันจะไม่ติดต่อคุณอีกครับ/ค่ะ ขอบคุณสำหรับเวลาของคุณครับ/ค่ะ"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "callback_opening",
+      "overlap_group": "customer_acknowledgment",
+      "overlap_start_s": 9.514,
+      "overlap_end_s": 11.994,
+      "component_window_overlap_s": 2.48,
+      "energy_gate_active_overlap_estimate_s": 1.92,
+      "expected_response": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

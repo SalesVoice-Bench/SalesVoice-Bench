@@ -1,0 +1,78 @@
+{
+  "level": "Level 2+",
+  "episode_id": "L2plus-permissioned-followup-en-US-02",
+  "language": "en-US",
+  "scenario": "One customer-authorized phone follow-up on Tuesday, November 3, 2026 after 10:00 UTC, continuing the CedarDesk first contact.",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 41.29,
+  "audio_sha256": "501d3c935071c4250db3c38aaef7377b71bda928d72dfbf04df6ee42ffda2f0c",
+  "groups": [
+    {
+      "group_id": "callback_opening",
+      "start_s": 0.0,
+      "end_s": 8.8,
+      "duration_s": 8.8,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, concise, and natural; make clear why this call is happening and check the customer's availability.",
+          "text": "Hello, this is Maya from CedarDesk, calling Tuesday, November third, as you requested. Is now still a good time for that brief comparison call?"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_acknowledgment",
+      "start_s": 5.456,
+      "end_s": 7.496,
+      "duration_s": 2.04,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "A brief, relaxed listening acknowledgment; start over the seller naturally, without taking the floor.",
+          "text": "Mm-hmm, yes."
+        }
+      ]
+    },
+    {
+      "group_id": "followup_resolution",
+      "start_s": 9.05,
+      "end_s": 41.29,
+      "duration_s": 32.24,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Attentive and conversational; recall each important term plainly, with a small pause between facts.",
+          "text": "Last time we confirmed three seats for sixty-six dollars total each month, no setup fee, CSV export, and a month-to-month plan. Is that still the comparison you'd like to review?"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and engaged; acknowledge the accurate recall, then set a firm contact boundary.",
+          "text": "Yes, that's right, and those terms still fit. My cofounder and I compared it with one other option. We're not ready to choose today, and please don't call or email again. I'll reach out if we want a demo."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Warm, respectful, and unambiguous; do not add another sales ask.",
+          "text": "Understood. I won't contact you again. Thanks for taking the time, and have a good day."
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "callback_opening",
+      "overlap_group": "customer_acknowledgment",
+      "overlap_start_s": 5.456,
+      "overlap_end_s": 7.496,
+      "component_window_overlap_s": 2.04,
+      "energy_gate_active_overlap_estimate_s": 1.6,
+      "expected_response": "restore the agreed context, honor the one-call limit, and confirm no further outreach"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "L2plus-permissioned-followup",
+  "level": "Level 2+",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "linked_level2_episode": "L2-first-contact",
+  "callback_window": "2026-11-10 after 10:00 UTC",
+  "mix_plan": {
+    "groups_in_order": [
+      "callback_opening",
+      "customer_acknowledgment",
+      "followup_resolution"
+    ],
+    "backchannel_start_fraction_of_base": 0.67,
+    "expected_handling": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+  },
+  "groups": [
+    {
+      "id": "callback_opening",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "Hello, this is Alex from Willow Home Safety, calling at the time you approved. Last time you needed three locations, a sixty-dollar maximum and no subscription. Does that still sound right?"
+        }
+      ]
+    },
+    {
+      "id": "customer_acknowledgment",
+      "mode": "single",
+      "overlay_on": "callback_opening",
+      "overlap_start_fraction_of_base": 0.67,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "Yes, that's still right."
+        }
+      ]
+    },
+    {
+      "id": "followup_resolution",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "Thanks for confirming. I checked EntrySense Mini: it costs forty-nine dollars once, includes two sensors, gives local alerts and has a ninety-day warranty. I can't confirm that extra sensors can be added, so I can't say it covers all three locations you need."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "Then it isn't enough for my home. Thank you for checking instead of guessing. Please mark that I don't want another call."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "Understood. It doesn't meet your three-location requirement, and I won't contact you again. Thanks for your time."
+        }
+      ]
+    }
+  ]
+}

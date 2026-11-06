@@ -1,0 +1,78 @@
+{
+  "level": "Level 2+",
+  "episode_id": "L2plus-permissioned-followup",
+  "language": "hi",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 53.57,
+  "audio_sha256": "1ceabd332bc5d22fd9b76f0d28c2d2bf2de3debcdda239d06b1d6f80c5288916",
+  "groups": [
+    {
+      "group_id": "callback_opening",
+      "start_s": 0.0,
+      "end_s": 15.12,
+      "duration_s": 15.12,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "नमस्ते, मैं विलौ होम सेफ़्टी से एलेक्स बोल रहा हूँ, आपको उस समय कॉल कर रहा हूँ जिसकी आपने अनुमति दी थी। पिछली बार आपको तीन जगहों के लिए, अधिकतम साठ डॉलर और कोई सब्सक्रिप्शन नहीं चाहिए था। क्या यह अभी भी सही लग रहा है?"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_acknowledgment",
+      "start_s": 10.13,
+      "end_s": 11.93,
+      "duration_s": 1.8,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "हाँ, यह अभी भी सही है।"
+        }
+      ]
+    },
+    {
+      "group_id": "followup_resolution",
+      "start_s": 15.37,
+      "end_s": 53.57,
+      "duration_s": 38.2,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "पुष्टि करने के लिए धन्यवाद। मैंने एंट्रीसेंस मिनी की जाँच की: इसकी कीमत एक बार में उनचास डॉलर है, इसमें दो सेंसर शामिल हैं, यह स्थानीय अलर्ट देता है और इसकी नब्बे दिन की वारंटी है। मैं यह पुष्टि नहीं कर सकता कि अतिरिक्त सेंसर जोड़े जा सकते हैं, इसलिए मैं यह नहीं कह सकता कि यह आपकी ज़रूरत की तीनों जगहों को कवर करता है।"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "तो यह मेरे घर के लिए पर्याप्त नहीं है। अनुमान लगाने के बजाय जाँच करने के लिए धन्यवाद। कृपया नोट कर लें कि मुझे कोई और कॉल नहीं चाहिए।"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "समझ गया। यह आपकी तीन-जगहों की आवश्यकता को पूरा नहीं करता है, और मैं आपसे दोबारा संपर्क नहीं करूँगा। आपके समय के लिए धन्यवाद।"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "callback_opening",
+      "overlap_group": "customer_acknowledgment",
+      "overlap_start_s": 10.13,
+      "overlap_end_s": 11.93,
+      "component_window_overlap_s": 1.8,
+      "energy_gate_active_overlap_estimate_s": 1.54,
+      "expected_response": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

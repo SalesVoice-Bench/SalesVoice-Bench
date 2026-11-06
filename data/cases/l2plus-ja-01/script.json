@@ -1,0 +1,63 @@
+{
+  "id": "L2plus-permissioned-followup",
+  "level": "Level 2+",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "linked_level2_episode": "L2-first-contact",
+  "callback_window": "2026-11-10 after 10:00 UTC",
+  "mix_plan": {
+    "groups_in_order": [
+      "callback_opening",
+      "customer_acknowledgment",
+      "followup_resolution"
+    ],
+    "backchannel_start_fraction_of_base": 0.67,
+    "expected_handling": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+  },
+  "groups": [
+    {
+      "id": "callback_opening",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "こんにちは、Willow Home Safetyのアレックスです。ご承認いただいた時間にお電話いたしました。前回は、3箇所、最大60ドル、サブスクリプションなしをご希望でしたね。そちらでまだよろしいでしょうか？"
+        }
+      ]
+    },
+    {
+      "id": "customer_acknowledgment",
+      "mode": "single",
+      "overlay_on": "callback_opening",
+      "overlap_start_fraction_of_base": 0.67,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "はい、まだその通りです。"
+        }
+      ]
+    },
+    {
+      "id": "followup_resolution",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "ご確認ありがとうございます。EntrySense Miniについて確認いたしました。一度のお支払いで49ドルで、センサーが2つ含まれており、ローカルアラートを提供し、90日間の保証が付いています。追加のセンサーが追加できるか確認できませんでしたので、お客様が必要とされる3箇所すべてをカバーできるとは申し上げられません。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "それでは、私の家には十分ではありませんね。推測ではなく、確認してくださってありがとうございます。今後、電話は不要であることを記録しておいてください。"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "承知いたしました。3箇所の要件には合致せず、今後、お客様にご連絡することはございません。お時間をいただきありがとうございました。"
+        }
+      ]
+    }
+  ]
+}

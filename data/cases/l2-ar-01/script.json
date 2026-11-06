@@ -1,0 +1,89 @@
+{
+  "id": "L2-first-contact",
+  "level": "Level 2",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "mix_plan": {
+    "groups_in_order": [
+      "opening",
+      "seller_partial",
+      "customer_interrupt",
+      "recovery_and_close"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.4,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+  },
+  "groups": [
+    {
+      "id": "opening",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "مرحبًا، معك أليكس من Willow Home Safety. شكرًا لردك على مكالمتي. هل هذا وقت مناسب لمقدمة موجزة؟"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "نعم، لدي دقيقة. أحتاج تغطية لثلاثة مواقع أبواب أو أحواض، وحدي الأقصى للدفع مقدمًا هو ستون دولارًا، ولا أرغب في اشتراك."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "فهمت: ثلاثة مواقع، لا يزيد عن ستين دولارًا مقدمًا، ولا خطة شهرية. سأتحقق من مدى التوافق بعناية."
+        }
+      ]
+    },
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "مجموعة Willow Sensor تحتوي على ثلاثة أجهزة استشعار وتكلفتها أربعة وثمانون دولارًا لمرة واحدة؛ المراقبة الهاتفية عن بعد اختيارية بتسعة دولارات شهريًا، و—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.4,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "آسف للمقاطعة—ستون دولارًا هو إجمالي حدي الأقصى، ولن أقبل خطة شهرية."
+        }
+      ]
+    },
+    {
+      "id": "recovery_and_close",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "شكرًا للتوضيح. بسعر أربعة وثمانين دولارًا، هذه المجموعة خارج حدودك، لذلك لن أقدمها كخيار مناسب. يمكنني التحقق مما إذا كان هناك خيار بثلاثة أجهزة استشعار بسعر أقل وبدون رسوم شهرية، لكن لا يمكنني الوعد بذلك."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "هذا سيساعد. هل يمكنك الاتصال بي في العاشر من نوفمبر بعد الساعة العاشرة صباحًا بالتوقيت العالمي المنسق (UTC)، فقط بخصوص خيار بدون رسوم شهرية؟"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "بإذنك، سأتصل بك في العاشر من نوفمبر بعد الساعة العاشرة صباحًا بالتوقيت العالمي المنسق (UTC) بخصوص هذا السؤال المحدد. لا يوجد شراء أو التزام اليوم."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "أوافق على هذه المتابعة الهاتفية. رجاءً لا أي اتصال آخر."
+        }
+      ]
+    }
+  ]
+}

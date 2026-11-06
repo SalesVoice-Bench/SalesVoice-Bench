@@ -1,0 +1,89 @@
+{
+  "id": "L2-first-contact",
+  "level": "Level 2",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "mix_plan": {
+    "groups_in_order": [
+      "opening",
+      "seller_partial",
+      "customer_interrupt",
+      "recovery_and_close"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.4,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+  },
+  "groups": [
+    {
+      "id": "opening",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "Hello, this is Alex from Willow Home Safety. Thanks for taking my call. Is now a good time for a brief introduction?"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "Yes, I have a minute. I need coverage for three door or sink locations, my upfront limit is sixty dollars, and I don't want a subscription."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "Got it: three locations, no more than sixty dollars upfront, and no monthly plan. I'll check the fit carefully."
+        }
+      ]
+    },
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "The Willow Sensor kit has three sensors and costs eighty-four dollars once; remote phone monitoring is optional at nine dollars a month, and—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.4,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "Sorry to jump in—sixty dollars is my hard total, and I won't take a monthly plan."
+        }
+      ]
+    },
+    {
+      "id": "recovery_and_close",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "Thanks for clarifying. At eighty-four dollars, this kit is outside your limit, so I won't present it as a match. I can check whether a lower-priced three-sensor option with no monthly fee exists, but I can't promise one."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "That would help. Could you call me on November tenth after ten a.m. UTC, just about an option with no monthly fee?"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "With your permission, I'll call on November tenth after ten a.m. UTC about that specific question. There's no purchase or commitment today."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "I agree to that phone follow-up. No other contact, please."
+        }
+      ]
+    }
+  ]
+}

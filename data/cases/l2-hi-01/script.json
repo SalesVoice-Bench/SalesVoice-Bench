@@ -1,0 +1,89 @@
+{
+  "id": "L2-first-contact",
+  "level": "Level 2",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "mix_plan": {
+    "groups_in_order": [
+      "opening",
+      "seller_partial",
+      "customer_interrupt",
+      "recovery_and_close"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.4,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+  },
+  "groups": [
+    {
+      "id": "opening",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "नमस्ते, मैं विलौ होम सेफ़्टी से एलेक्स बोल रहा हूँ। मेरा कॉल लेने के लिए धन्यवाद। क्या अभी एक संक्षिप्त परिचय के लिए अच्छा समय है?"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "हाँ, मेरे पास एक मिनट है। मुझे तीन दरवाज़ों या सिंक वाली जगहों के लिए कवरेज चाहिए, मेरी अग्रिम सीमा साठ डॉलर है, और मुझे कोई सब्सक्रिप्शन नहीं चाहिए।"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "समझ गया: तीन जगहें, अग्रिम में साठ डॉलर से ज़्यादा नहीं, और कोई मासिक प्लान नहीं। मैं ध्यान से देखूँगा कि क्या उपयुक्त है।"
+        }
+      ]
+    },
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "विलौ सेंसर किट में तीन सेंसर हैं और इसकी कीमत एक बार में चौरासी डॉलर है; रिमोट फोन मॉनिटरिंग वैकल्पिक है और नौ डॉलर प्रति माह है, और—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.4,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "माफ़ कीजिए, बीच में बोलने के लिए—साठ डॉलर मेरी कुल अधिकतम सीमा है, और मैं मासिक प्लान नहीं लूँगा।"
+        }
+      ]
+    },
+    {
+      "id": "recovery_and_close",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "स्पष्ट करने के लिए धन्यवाद। चौरासी डॉलर में, यह किट आपकी सीमा से बाहर है, इसलिए मैं इसे उपयुक्त विकल्प के रूप में प्रस्तुत नहीं करूँगा। मैं यह देख सकता हूँ कि क्या कोई कम कीमत वाला तीन-सेंसर वाला विकल्प बिना मासिक शुल्क के मौजूद है, लेकिन मैं इसका वादा नहीं कर सकता।"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "उससे मदद मिलेगी। क्या आप मुझे दस नवंबर को सुबह दस बजे यूटीसी के बाद कॉल कर सकते हैं, सिर्फ़ बिना मासिक शुल्क वाले विकल्प के बारे में?"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "आपकी अनुमति से, मैं दस नवंबर को सुबह दस बजे यूटीसी के बाद उस विशेष प्रश्न के बारे में कॉल करूँगा। आज कोई खरीद या प्रतिबद्धता नहीं है।"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "मैं उस फोन फॉलो-अप के लिए सहमत हूँ। कृपया कोई और संपर्क न करें।"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "L2-first-contact",
+  "level": "Level 2",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "mix_plan": {
+    "groups_in_order": [
+      "opening",
+      "seller_partial",
+      "customer_interrupt",
+      "recovery_and_close"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.4,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+  },
+  "groups": [
+    {
+      "id": "opening",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "สวัสดีครับ/ค่ะ ผม/ดิฉันอเล็กซ์จาก Willow Home Safety ครับ/ค่ะ ขอบคุณที่รับสายนะครับ/คะ ตอนนี้สะดวกให้ผม/ดิฉันแนะนำสั้นๆ ไหมครับ/คะ"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "ครับ/ค่ะ มีเวลาครับ/ค่ะ ผม/ดิฉันต้องการครอบคลุม 3 จุดสำหรับประตูหรืออ่างล้างจาน วงเงินสูงสุดที่จ่ายครั้งเดียวของผม/ดิฉันคือ 60 ดอลลาร์ และผม/ดิฉันไม่ต้องการแบบสมัครสมาชิกครับ/ค่ะ"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "รับทราบครับ/ค่ะ 3 จุด ไม่เกิน 60 ดอลลาร์ที่จ่ายครั้งเดียว และไม่มีแผนรายเดือน ผม/ดิฉันจะตรวจสอบความเหมาะสมอย่างละเอียดครับ/ค่ะ"
+        }
+      ]
+    },
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "ชุด Willow Sensor มีเซ็นเซอร์ 3 ตัว ราคา 84 ดอลลาร์ จ่ายครั้งเดียว การเฝ้าระวังทางโทรศัพท์จากระยะไกลเป็นแบบเลือกได้ มีค่าใช้จ่าย 9 ดอลลาร์ต่อเดือน และ—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.4,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "ขอโทษที่แทรกนะครับ/คะ 60 ดอลลาร์คือวงเงินสูงสุดทั้งหมดของผม/ดิฉัน และผม/ดิฉันจะไม่รับแผนรายเดือนครับ/ค่ะ"
+        }
+      ]
+    },
+    {
+      "id": "recovery_and_close",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "ขอบคุณที่ชี้แจงนะครับ/คะ ที่ราคา 84 ดอลลาร์ ชุดนี้เกินวงเงินของคุณครับ/ค่ะ ผม/ดิฉันจึงจะไม่เสนอว่ามันตรงตามความต้องการของคุณครับ/ค่ะ ผม/ดิฉันสามารถตรวจสอบได้ว่ามีตัวเลือกเซ็นเซอร์ 3 ตัวที่ราคาถูกกว่าและไม่มีค่าธรรมเนียมรายเดือนหรือไม่ แต่ผม/ดิฉันไม่สามารถรับปากได้ครับ/ค่ะ"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "นั่นคงจะช่วยได้ครับ/ค่ะ คุณช่วยโทรหาผม/ดิฉันในวันที่ 10 พฤศจิกายน หลัง 10 โมงเช้า UTC ได้ไหมครับ/คะ เพื่อคุยเกี่ยวกับตัวเลือกที่ไม่มีค่าธรรมเนียมรายเดือนเท่านั้น"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "ถ้าคุณอนุญาต ผม/ดิฉันจะโทรหาในวันที่ 10 พฤศจิกายน หลัง 10 โมงเช้า UTC เพื่อคุยเรื่องนั้นโดยเฉพาะครับ/ค่ะ วันนี้ยังไม่มีการซื้อหรือข้อผูกมัดใดๆ ครับ/ค่ะ"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "ผม/ดิฉันตกลงให้โทรติดตามผลทางโทรศัพท์ครับ/ค่ะ กรุณาอย่าติดต่อทางอื่นอีกนะครับ/คะ"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "level": "Level 2",
+  "episode_id": "L2-first-contact",
+  "language": "es",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 74.66,
+  "audio_sha256": "d803da15459edb742ed2c2a69ef542824be7e758331addf804b775774fa62542",
+  "groups": [
+    {
+      "group_id": "opening",
+      "start_s": 0.0,
+      "end_s": 26.28,
+      "duration_s": 26.28,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "Hola, soy Alex de Willow Home Safety. Gracias por atender mi llamada. ¿Es un buen momento para una breve presentación?"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "Sí, tengo un minuto. Necesito cobertura para tres ubicaciones de puertas o fregaderos, mi límite inicial es de sesenta dólares, y no quiero una suscripción."
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "Entendido: tres ubicaciones, no más de sesenta dólares por adelantado, y sin plan mensual. Revisaré cuidadosamente si se ajusta."
+        }
+      ]
+    },
+    {
+      "group_id": "seller_partial",
+      "start_s": 26.53,
+      "end_s": 38.29,
+      "duration_s": 11.76,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "El kit Willow Sensor tiene tres sensores y cuesta ochenta y cuatro dólares una sola vez; el monitoreo remoto por teléfono es opcional por nueve dólares al mes, y—"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_interrupt",
+      "start_s": 31.234,
+      "end_s": 37.874,
+      "duration_s": 6.64,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "Disculpe que lo interrumpa, sesenta dólares es mi total estricto, y no aceptaré un plan mensual."
+        }
+      ]
+    },
+    {
+      "group_id": "recovery_and_close",
+      "start_s": 38.54,
+      "end_s": 74.66,
+      "duration_s": 36.12,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "Gracias por aclarar. Con ochenta y cuatro dólares, este kit está fuera de su límite, así que no lo presentaré como una opción adecuada. Puedo verificar si existe una opción de tres sensores de menor precio sin tarifa mensual, pero no puedo prometerle una."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "Eso ayudaría. ¿Podría llamarme el diez de noviembre después de las diez a.m. UTC, solo para hablar de una opción sin tarifa mensual?"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "Con su permiso, llamaré el diez de noviembre después de las diez a.m. UTC sobre esa pregunta específica. No hay compra ni compromiso hoy."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "Acepto esa llamada de seguimiento. Por favor, ningún otro contacto."
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "floor_taking_barge_in_then_recovery",
+      "base_group": "seller_partial",
+      "overlap_group": "customer_interrupt",
+      "overlap_start_s": 31.234,
+      "overlap_end_s": 37.874,
+      "component_window_overlap_s": 6.64,
+      "energy_gate_active_overlap_estimate_s": 6.06,
+      "expected_response": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

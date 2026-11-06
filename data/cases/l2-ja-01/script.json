@@ -1,0 +1,89 @@
+{
+  "id": "L2-first-contact",
+  "level": "Level 2",
+  "task_type": "End-to-end first sales contact with a controlled interruption and explicit callback permission",
+  "mix_plan": {
+    "groups_in_order": [
+      "opening",
+      "seller_partial",
+      "customer_interrupt",
+      "recovery_and_close"
+    ],
+    "interrupt_start_fraction_of_seller_partial": 0.4,
+    "recovery_after_both_speakers_finish_s": 0.25,
+    "expected_handling": "yield to the customer's constraint correction, accurately state the mismatch and obtain specific permission before follow-up"
+  },
+  "groups": [
+    {
+      "id": "opening",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly, lightly energetic and natural; keep the opening brief and unhurried.",
+          "text": "こんにちは、Willow Home Safetyのアレックスです。お電話に出ていただきありがとうございます。今、少しだけご説明させていただいてもよろしいでしょうか？"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Interested but cautious; clear and practical.",
+          "text": "はい、少し時間があります。ドアかシンクの3箇所をカバーしたいのですが、前払いの上限は60ドルで、サブスクリプションは希望しません。"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Attentive and reassuring; repeat the key constraints clearly.",
+          "text": "承知いたしました。3箇所、前払い60ドルまで、月額プランなしですね。適合するかどうか、慎重に確認いたします。"
+        }
+      ]
+    },
+    {
+      "id": "seller_partial",
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Matter-of-fact product explanation, then leave the last word open as if the customer is cutting in.",
+          "text": "Willow Sensorキットにはセンサーが3つ含まれており、一度のお支払いで84ドルです。リモート電話監視はオプションで月額9ドルですが、その—"
+        }
+      ]
+    },
+    {
+      "id": "customer_interrupt",
+      "mode": "single",
+      "overlay_on": "seller_partial",
+      "overlap_start_fraction_of_base": 0.4,
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; begin while the seller is still speaking, without shouting.",
+          "text": "割り込んで申し訳ありませんが、60ドルが私の合計の上限で、月額プランは利用しません。"
+        }
+      ]
+    },
+    {
+      "id": "recovery_and_close",
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Yielded and empathetic; acknowledge the correction, speak clearly and avoid pressure.",
+          "text": "はっきりさせてくださってありがとうございます。84ドルのこのキットは、お客様の上限を超えていますので、適合するものとしてはご提案いたしません。月額料金なしで、より安価な3センサーのオプションがあるか確認することはできますが、お約束はできません。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Thoughtful and calm; the request is specific and tentative.",
+          "text": "それは助かります。11月10日のUTC午前10時以降に、月額料金なしのオプションについてのみ、お電話いただけますか？"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Clear, respectful and warm; confirm the exact permission and make no commitment for the customer.",
+          "text": "お客様のご許可をいただければ、11月10日のUTC午前10時以降に、その特定の件についてお電話いたします。本日、ご購入やご契約の義務はございません。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Calm and definite.",
+          "text": "その電話でのフォローアップに同意します。他の連絡は不要です。"
+        }
+      ]
+    }
+  ]
+}

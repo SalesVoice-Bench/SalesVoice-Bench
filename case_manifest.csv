@@ -1,0 +1,25 @@
+﻿case_id,level,language,audio,sha256,source,provenance
+l1-en-US-i1-backchannel,Level 1,en-US,l1-en-US-i1.wav,eaba5e7ab699b83ffa5f3062a819b9ccf5fe8c104856c35c03425efa56086d20,selected audio case,Curated audio case
+l1-en-US-i3-correction-recovery,Level 1,en-US,l1-en-US-i3.wav,204632e0f37bf3dd3ae5d52e37247d75c1e413b18217c9901493fb47d80b9562,selected audio case,Curated audio case
+l1-ar-i3-correction-recovery,Level 1,ar,l1-ar-i3.wav,07966c51cd517b375b26a1ed62ab5576f93e5138e4b3192502305ff2ee511ee0,selected audio case,Curated audio case
+l1-zh-i1-backchannel,Level 1,zh,l1-zh-i1.wav,d5918977bfd0b39d6e6f9a00e48e7be69b588935481f1308c2ea6352eff1cfb5,selected audio case,Curated audio case
+l1-hi-i3-correction-recovery,Level 1,hi,l1-hi-i3.wav,422a593191bcfb283172c4a86571cebb53211bbd3fb84d3368e347fdbfde61f7,selected audio case,Curated audio case
+l1-ja-i1-backchannel,Level 1,ja,l1-ja-i1.wav,5c87fe3fc88341893494c56eca0c6e3672ea5b36fa13cd83770aa998a087306e,selected audio case,Curated audio case
+l1-es-i3-correction-recovery,Level 1,es,l1-es-i3.wav,c413eb5ed6cb0e8010d426fc58891560e151a3b45516baedc592cdbf605453f7,selected audio case,Curated audio case
+l1-th-i1-backchannel,Level 1,th,l1-th-i1.wav,40fce3fcd09e44761776ba15196ee96ffdae9f1c2bf1e13492c25fb5e717d2c7,selected audio case,Curated audio case
+l2-en-US-01,Level 2,en-US,l2-en-US-01.wav,3f10c563cfbb5fbb69e7f1257ff3303ba6cf5efe2351858c6c84208eac1ef3d3,selected audio case,Curated audio case
+l2plus-en-US-01,Level 2+,en-US,l2plus-en-US-01-followup.wav,c60a3071284fe24fe5fed7b5b53ef158533b3fb297d645ead02fba34d4469f8c,selected audio case,Curated audio case
+l2-ar-01,Level 2,ar,l2-ar-01.wav,f70e6eca5151c13d80274b070830864e1f8859a9059a324c0022c049a965c155,selected audio case,Curated audio case
+l2plus-ar-01,Level 2+,ar,l2plus-ar-01-followup.wav,6f4f76d6bd1e094da6b85cb99c5a78d6fdfd7b6bf1e1a2c663e3aebcdc62da92,selected audio case,Curated audio case
+l2-zh-01,Level 2,zh,l2-zh-01.wav,e4403ff6568360e43602246b684d5328673e29cdcbf2a9f8056f1ed5f32243fa,selected audio case,Curated audio case
+l2plus-zh-01,Level 2+,zh,l2plus-zh-01-followup.wav,dcdf3cbdab3cd12dfd1e0227bfd1aef2f2b21d767a18f27e37eae15a5d0ba59e,selected audio case,Curated audio case
+l2-hi-01,Level 2,hi,l2-hi-01.wav,50182ca466c5817d906c1c98a9846a573996a9a8541256299b88b3bf02480e6d,selected audio case,Curated audio case
+l2plus-hi-01,Level 2+,hi,l2plus-hi-01-followup.wav,1ceabd332bc5d22fd9b76f0d28c2d2bf2de3debcdda239d06b1d6f80c5288916,selected audio case,Curated audio case
+l2-ja-01,Level 2,ja,l2-ja-01.wav,ab38dc6fd1b2ec17b4b533415a92b639a65065b431945a2646ceaaa4cd171b02,selected audio case,Curated audio case
+l2plus-ja-01,Level 2+,ja,l2plus-ja-01-followup.wav,444ed88eadc7aac5e6bb269044570069435b8a9e0e39dcec8842ae058d87286c,selected audio case,Curated audio case
+l2-es-01,Level 2,es,l2-es-01.wav,d803da15459edb742ed2c2a69ef542824be7e758331addf804b775774fa62542,selected audio case,Curated audio case
+l2plus-es-01,Level 2+,es,l2plus-es-01-followup.wav,1d60c0dc09213bafbce3460aa763ab9b7758d93d46b670db55ba33af2b3cb433,selected audio case,Curated audio case
+l2-th-01,Level 2,th,l2-th-01.wav,ccc6d9d32ba71469ffe56cb2440db75abcc413d91eed8c911a1049f4c77b9573,selected audio case,Curated audio case
+l2plus-th-01,Level 2+,th,l2plus-th-01-followup.wav,867cd28dd3b541d74202037e7b65c06486a043e556893356db2ce3aaeff1c8fa,selected audio case,Curated audio case
+l2-en-US-02,Level 2,en-US,l2-en-US-02.wav,7fc6ee1ebcdb276b648d8e9b5d463b3505ec0549675b3089d63001fe2bb55637,selected audio case,Curated audio case
+l2plus-en-US-02,Level 2+,en-US,l2plus-en-US-02-followup.wav,501d3c935071c4250db3c38aaef7377b71bda928d72dfbf04df6ee42ffda2f0c,selected audio case,Curated audio case

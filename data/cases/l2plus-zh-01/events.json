@@ -1,0 +1,78 @@
+{
+  "level": "Level 2+",
+  "episode_id": "L2plus-permissioned-followup",
+  "language": "zh",
+  "task_type": "Follow up only after the specific phone permission from the linked Level 2 contact",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 46.01,
+  "audio_sha256": "dcdf3cbdab3cd12dfd1e0227bfd1aef2f2b21d767a18f27e37eae15a5d0ba59e",
+  "groups": [
+    {
+      "group_id": "callback_opening",
+      "start_s": 0.0,
+      "end_s": 13.24,
+      "duration_s": 13.24,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Warm, calm and familiar; make it clear this is the agreed callback, not a fresh cold pitch.",
+          "text": "您好，我是 Willow Home Safety 的 Alex，在您同意的时间给您回电。上次您提到需要覆盖三个位置，最高预算六十美元，并且不希望有订阅。这些条件还对吗？"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_acknowledgment",
+      "start_s": 8.871,
+      "end_s": 10.351,
+      "duration_s": 1.48,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Brief, affirming and engaged; a listening response rather than a floor claim.",
+          "text": "是的，没错。"
+        }
+      ]
+    },
+    {
+      "group_id": "followup_resolution",
+      "start_s": 13.49,
+      "end_s": 46.01,
+      "duration_s": 32.52,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Helpful and transparent; acknowledge the remembered constraints, with no pressure.",
+          "text": "谢谢您的确认。我查了一下 EntrySense Mini：它一次性售价四十九美元，包含两个传感器，提供本地警报，并有九十天保修。我无法确认是否可以添加额外的传感器，所以不能说它能覆盖您所需的全部三个位置。"
+        },
+        {
+          "speaker": "Customer",
+          "style": "Disappointed but appreciative; natural, not theatrical.",
+          "text": "那它就不够我家用了。谢谢您核实而不是随意猜测。请标记我不想再接到电话了。"
+        },
+        {
+          "speaker": "Seller",
+          "style": "Respectful and reassuring; concise confirmation, then end the call.",
+          "text": "明白了。它不符合您三个位置的要求，我也不会再联系您了。谢谢您的时间。"
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "listener_backchannel_continue",
+      "base_group": "callback_opening",
+      "overlap_group": "customer_acknowledgment",
+      "overlap_start_s": 8.871,
+      "overlap_end_s": 10.351,
+      "component_window_overlap_s": 1.48,
+      "energy_gate_active_overlap_estimate_s": 0.96,
+      "expected_response": "continue through a brief confirming backchannel, retain the three-location, USD 60 and no-subscription constraints, and respect the customer's no-more-calls request"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}

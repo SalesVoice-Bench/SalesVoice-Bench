@@ -1,0 +1,73 @@
+{
+  "level": "Level 1",
+  "episode_id": "L1-I3-correction-recovery",
+  "language": "es",
+  "task_type": "I3: stop for an in-turn correction, acknowledge it and resume",
+  "sample_rate_hz": 24000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "duration_s": 20.552,
+  "audio_sha256": "c413eb5ed6cb0e8010d426fc58891560e151a3b45516baedc592cdbf605453f7",
+  "groups": [
+    {
+      "group_id": "seller_partial",
+      "start_s": 0.0,
+      "end_s": 6.48,
+      "duration_s": 6.48,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Friendly and informative, mid-explanation; end as if the thought is still continuing.",
+          "text": "El kit Willow Sensor cuesta ochenta y cuatro dólares una sola vez, incluye tres sensores, y—"
+        }
+      ]
+    },
+    {
+      "group_id": "customer_interrupt",
+      "start_s": 2.462,
+      "end_s": 8.342,
+      "duration_s": 5.88,
+      "mode": "single",
+      "turns": [
+        {
+          "speaker": "Customer",
+          "style": "Polite but firm, slightly urgent; cut in naturally without shouting.",
+          "text": "Disculpe que lo interrumpa, mi límite estricto es de sesenta dólares en total, y no quiero un plan mensual."
+        }
+      ]
+    },
+    {
+      "group_id": "recovery",
+      "start_s": 8.592,
+      "end_s": 20.552,
+      "duration_s": 11.96,
+      "mode": "multi",
+      "turns": [
+        {
+          "speaker": "Seller",
+          "style": "Immediately attentive and empathetic; slow down, acknowledge the correction and avoid pressure.",
+          "text": "Gracias por detenerme. Con un límite de sesenta dólares, el kit de ochenta y cuatro dólares no es adecuado, así que no lo recomendaré."
+        },
+        {
+          "speaker": "Customer",
+          "style": "Reassured and matter-of-fact, with a small appreciative lift.",
+          "text": "Exacto. Gracias por escuchar."
+        }
+      ]
+    }
+  ],
+  "overlaps": [
+    {
+      "event_type": "floor_taking_barge_in_then_recovery",
+      "base_group": "seller_partial",
+      "overlap_group": "customer_interrupt",
+      "overlap_start_s": 2.462,
+      "overlap_end_s": 6.48,
+      "component_window_overlap_s": 4.018,
+      "energy_gate_active_overlap_estimate_s": 3.638,
+      "expected_response": "customer's correction overlaps the unfinished seller turn; seller yields, acknowledges and restates the constraint"
+    }
+  ],
+  "record_type": "curated audio case event notes"
+}
